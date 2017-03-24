@@ -1,4 +1,15 @@
-### Crawler
+## Study Group Event Tracker
+
+A series of scripts to pull "event" data from [Mozilla Study Groups](https://github.com/mozillascience/studyGroup), or informal peer learning groups organized around Github pages sites with a Jekyll Theme. In this case, "events" means 
+
+Study Group Leaders fork the [Study Group repo](https://github.com/mozillascience/studyGroup) to start their own website, and use github issues and `_posts` to populate events on their sites. Events can be anything from informal hacky hours to structured workshops taught by peers, often dabbling in scientific or statistical programming topics. Read more about Study Groups in the [Study Group Orientation Guide](https://mzl.la/sg-orientation).
+
+**WELCOME GSOC Contributors**
+
+Interested in working on this project? Check out the [GSOC-studyGroup contributor guide](https://github.com/mozillascience/studyGroup-GSOC)!
+
+
+### CRAWLER FOR STUDY GROUP DATA
 
 You need a github token, which you can generate [here][token]
 
@@ -134,5 +145,30 @@ Fork payload:
     }
 ```
 
+#### MERGED DATA FROM ALL GROUPS
 
-[token]:https://github.com/settings/tokens
+To run the script: 
+
+Goes to /data and execute: 
+
+```
+$ python join_json.py
+
+```
+It will generate a new json file in current folder. 
+
+
+#### Flow
+
+- Get all the folders in /data 
+- In every folder , it takes each json file and concatenate each other. 
+- The outcome of script, ```merge_files.json" ```, it's a json file with every information of jsons in /data. 
+- merge_files.json are at /data. 
+
+#### Requirements 
+
+- It should always run after the crawler. 
+
+#### TO DO 
+
+-- Ignore default jsons 
